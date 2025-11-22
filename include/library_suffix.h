@@ -40,7 +40,11 @@ For more information, please refer to <http://unlicense.org/>
 #elif XASH_PSP
 	#define OS_LIB_EXT "prx"
 #elif XASH_POSIX
-	#define OS_LIB_EXT "so"
+	#if XASH_EMSCRIPTEN
+		#define OS_LIB_EXT "wasm"
+	#else
+		#define OS_LIB_EXT "so"
+	#endif
 #else
 	#error
 #endif
