@@ -53,13 +53,19 @@ For more information, please refer to <http://unlicense.org/>
 extern "C" {
 #endif
 
+#if defined(__GNUC__)
+	#define RETURNS_NONNULL __attribute__(( returns_nonnull ))
+#else
+	#define RETURNS_NONNULL
+#endif
+
 // returns cpu or os name by it's predefined id
-const char *Q_PlatformStringByID( int platform );
-const char *Q_ArchitectureStringByID( int arch, unsigned int abi, int endianness, int is64 );
+const char *Q_PlatformStringByID( int platform ) RETURNS_NONNULL;
+const char *Q_ArchitectureStringByID( int arch, unsigned int abi, int endianness, int is64 ) RETURNS_NONNULL;
 
 // returns current build cpu and os
-const char *Q_buildos( void );
-const char *Q_buildarch( void );
+const char *Q_buildos( void ) RETURNS_NONNULL;
+const char *Q_buildarch( void ) RETURNS_NONNULL;
 
 // generate library filename based on system properties
 // returns a string in format of
