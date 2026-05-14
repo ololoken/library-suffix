@@ -48,7 +48,7 @@ For more information, please refer to <http://unlicense.org/>
 #define PLATFORM_APPLE      5
 #define PLATFORM_NETBSD     6
 #define PLATFORM_OPENBSD    7
-// reserved
+#define PLATFORM_EMSCRIPTEN 8
 #define PLATFORM_DOS4GW     9
 #define PLATFORM_HAIKU      10
 #define PLATFORM_SERENITY   11
@@ -74,6 +74,8 @@ For more information, please refer to <http://unlicense.org/>
 	#define XASH_PLATFORM PLATFORM_NETBSD
 #elif XASH_OPENBSD
 	#define XASH_PLATFORM PLATFORM_OPENBSD
+#elif XASH_EMSCRIPTEN
+	#define XASH_PLATFORM PLATFORM_EMSCRIPTEN
 #elif XASH_DOS4GW
 	#define XASH_PLATFORM PLATFORM_DOS4GW
 #elif XASH_HAIKU

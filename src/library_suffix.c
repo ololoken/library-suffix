@@ -57,6 +57,8 @@ const char *Q_PlatformStringByID( const int platform )
 		return "netbsd";
 	case PLATFORM_OPENBSD:
 		return "openbsd";
+	case PLATFORM_EMSCRIPTEN:
+		return "emscripten";
 	case PLATFORM_DOS4GW:
 		return "DOS4GW";
 	case PLATFORM_HAIKU:

@@ -16,6 +16,7 @@ static struct
 { PLATFORM_FREEBSD,       "freebsd" },
 { PLATFORM_NETBSD,        "netbsd" },
 { PLATFORM_OPENBSD,       "openbsd" },
+{ PLATFORM_EMSCRIPTEN,    "emscripten" },
 { PLATFORM_DOS4GW,        "DOS4GW" },
 { PLATFORM_HAIKU,         "haiku" },
 { PLATFORM_SERENITY,      "serenity" },
