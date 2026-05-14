@@ -57,8 +57,6 @@ const char *Q_PlatformStringByID( const int platform )
 		return "netbsd";
 	case PLATFORM_OPENBSD:
 		return "openbsd";
-	case PLATFORM_EMSCRIPTEN:
-		return "emscripten";
 	case PLATFORM_DOS4GW:
 		return "DOS4GW";
 	case PLATFORM_HAIKU:
@@ -117,8 +115,6 @@ const char *Q_ArchitectureStringByID( int arch, unsigned int abi, int endianness
 		return "i386";
 	case ARCHITECTURE_E2K:
 		return "e2k";
-	case ARCHITECTURE_JS:
-		return "javascript";
 	case ARCHITECTURE_PPC:
 		return endianness == ENDIANNESS_LITTLE ?
 			( is64 ? "ppc64el" : "ppcel" ):
@@ -165,6 +161,8 @@ const char *Q_ArchitectureStringByID( int arch, unsigned int abi, int endianness
 		break;
 	case ARCHITECTURE_WASM:
 		return is64 ? "wasm64" : "wasm32";
+	case ARCHITECTURE_SPARC:
+		return is64 ? "sparc64" : "sparc";
 	}
 
 	return is64 ?

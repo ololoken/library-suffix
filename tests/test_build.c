@@ -16,7 +16,6 @@ static struct
 { PLATFORM_FREEBSD,       "freebsd" },
 { PLATFORM_NETBSD,        "netbsd" },
 { PLATFORM_OPENBSD,       "openbsd" },
-{ PLATFORM_EMSCRIPTEN,    "emscripten" },
 { PLATFORM_DOS4GW,        "DOS4GW" },
 { PLATFORM_HAIKU,         "haiku" },
 { PLATFORM_SERENITY,      "serenity" },
@@ -39,7 +38,6 @@ static struct
 { ARCHITECTURE_AMD64, 0, -1, -1, "amd64" },
 { ARCHITECTURE_X86, 0, -1, -1, "i386" },
 { ARCHITECTURE_E2K, 0, -1, -1, "e2k" },
-{ ARCHITECTURE_JS, 0, -1, -1, "javascript" },
 
 // all possible WebAssembly names
 { ARCHITECTURE_WASM, 0, -1, 1, "wasm64" },
@@ -87,6 +85,11 @@ static struct
 { ARCHITECTURE_RISCV, ARCH_RISCV_FP_SINGLE, -1, 0, "riscv32f" },
 { ARCHITECTURE_RISCV, ARCH_RISCV_FP_DOUBLE, -1, 1,  "riscv64d" },
 { ARCHITECTURE_RISCV, ARCH_RISCV_FP_DOUBLE, -1, 0, "riscv32d" },
+
+// SPARCv9 does technically have little endian access,
+// but it's not applicable to us
+{ ARCHITECTURE_SPARC, 0, -1, 0, "sparc" },
+{ ARCHITECTURE_SPARC, 0, -1, 1, "sparc64" },
 };
 
 static int TestPlatformString( void )
