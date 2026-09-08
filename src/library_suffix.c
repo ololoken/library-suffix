@@ -51,6 +51,8 @@ const char *Q_PlatformStringByID( const int platform )
 		return "linux";
 	case PLATFORM_APPLE:
 		return "apple";
+	case PLATFORM_IOS:
+		return "ios";
 	case PLATFORM_FREEBSD:
 		return "freebsd";
 	case PLATFORM_NETBSD:
